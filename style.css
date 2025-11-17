@@ -1,0 +1,166 @@
+/* RESET DASAR */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f9; /* Warna latar belakang */
+    color: #333;
+}
+
+/* -------------------------------------- */
+/* IMPLEMENTASI FLEXBOX (NAVBAR & HERO)   */
+/* -------------------------------------- */
+
+.navbar {
+    display: flex; /* FLEXBOX */
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    border-radius: 48px;
+    background-color: #333;
+    color: white;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+}
+.nav-links a:hover {
+    color:aqua;
+} 
+
+.hero-section {
+    display: flex; /* FLEXBOX */
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px 5%;
+    background-color: #e0f7fa;
+}
+
+.hero-image {
+    max-width: 40%;
+    height: auto;
+    border-radius: 10%;
+    box-shadow: 0 0 0 10px #333;
+    object-fit: cover;
+}
+
+/* Footer (Juga menggunakan Flexbox) */
+.footer {
+    display: flex; /* FLEXBOX */
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background-color: #333;
+    color: white;
+}
+
+.footer a {
+    color: #80deea;
+    border-radius: 30px;
+    text-decoration: none;
+    margin-left: 15px;
+}
+
+
+/* -------------------------------------- */
+/* IMPLEMENTASI GRID (SKILLS & PROJECTS)  */
+/* -------------------------------------- */
+
+.skills-section, .projects-section {
+    padding: 60px 5%;
+    text-align: center;
+}
+
+/* GRID Container untuk SKILLS (Desktop: 3 kolom) */
+.skills-grid-container {
+    display: grid; /* CSS GRID */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.skill-card {
+    padding: 20px;
+    margin-bottom: auto;
+    background-color: #80deea;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* GRID Container untuk PROJECTS (Desktop: 3 kolom) */
+.projects-grid-container {
+    display: grid; /* CSS GRID */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    padding: 20px;
+    background-color: #80deea;
+    border-radius: 6px;
+}
+
+/* -------------------------------------- */
+/* RESPONSIVE DESIGN (Media Queries)      */
+/* -------------------------------------- */
+
+/* Untuk Tablet dan Mobile (di bawah 768px) */
+@media (max-width: 768px) {
+    
+    /* 1. FLEXBOX: Ubah HERO menjadi tumpukan vertikal */
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-image {
+        max-width: 70%;
+        margin-top: 50px;
+    }
+    .hero-content {
+        order: -1; /* Pindahkan teks di atas gambar */
+    }
+
+    /* 2. GRID: Ubah SKILLS & PROJECTS menjadi 1 kolom */
+    .skills-grid-container,
+    .projects-grid-container {
+        grid-template-columns: 1fr; /* Hanya 1 kolom di mobile */
+    }
+
+    /* 3. FLEXBOX: Ubah FOOTER menjadi tumpukan vertikal */
+    .footer {
+        flex-direction: column;
+        text-align: center;
+    }
+    .social-links {
+        margin-top: 10px;
+    }
+}
+
+/* Styling Tambahan (Optional) */
+.btn-primary, .btn-secondary {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+.btn-primary {
+    background-color: #00bcd4;
+    color: white;
+}
+.btn-secondary {
+    background-color: #e0f7fa;
+    color: #00bcd4;
+}
